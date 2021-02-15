@@ -30,32 +30,51 @@ public class _00_MoreAndMoreTests {
 
 	  }
 
-//	@Test
-//	  public void SquareTest() {
-//
-//	    assertTrue(isSquare(4));
-//	    assertTrue(isSquare(144));
-//	    assertTrue(isSquare(64));
-//	    assertTrue(isSquare(10201));
-//	    assertTrue(isSquare(1));
-//	    assertFalse(isSquare(3));
-//	    assertFalse(isSquare(22));
-//	    assertFalse(isSquare(143));
-//
-//	  }
-//
-//	@Test
-//	  public void CubeTest() {
-//
-//	    assertTrue(isCube(27));
-//	    assertTrue(isCube(216));
-//	    assertTrue(isCube(729));
-//	    assertTrue(isCube(1));
-//	    assertFalse(isCube(3));
-//	    assertFalse(isCube(22));
-//	    assertFalse(isCube(143));
-//
-//	  }
+	@Test
+	  public void SquareTest() {
+
+	    assertTrue(isSquare(4));
+	    assertTrue(isSquare(144));
+	    assertTrue(isSquare(64));
+	    assertTrue(isSquare(10201));
+	    assertTrue(isSquare(1));
+	    assertFalse(isSquare(3));
+	    assertFalse(isSquare(22));
+	    assertFalse(isSquare(143));
+
+	  }
+
+	@Test
+	  public void CubeTest() {
+
+	    assertTrue(isCube(27));
+	    assertTrue(isCube(216));
+	    assertTrue(isCube(729));
+	    assertTrue(isCube(1));
+	    assertFalse(isCube(3));
+	    assertFalse(isCube(22));
+	    assertFalse(isCube(143));
+
+	  }
+
+	private boolean isCube(int i) {
+		// TODO Auto-generated method stub
+		boolean cubed = false;
+		for(int j = 0;j<=i;j++) {
+			int cube = j * j * j;
+			if(cube == i) {
+				cubed = true;
+				break;
+			}
+		}
+		return cubed;
+	}
+
+	private boolean isSquare(int i) {
+		// TODO Auto-generated method stub
+		double s = Math.sqrt(i);
+		return ((s - Math.floor(s)) == 0);
+	}
 
 	private boolean isPrime(int i) {
 		// TODO Auto-generated method stub
