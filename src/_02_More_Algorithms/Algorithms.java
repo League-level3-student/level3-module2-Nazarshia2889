@@ -19,6 +19,34 @@ public class Algorithms {
 		}
 		return ascending; 
 	}
+	static boolean stringArraySorted(List<String> unsortedSequences) {
+		boolean sorted = true; 
+		for(int i = 0;i<unsortedSequences.size()-1;i++) {
+			if(unsortedSequences.get(i).length() < unsortedSequences.get(i+1).length()) { 
+				continue; 
+			}
+			else {
+				sorted = false;
+				break;
+			}
+		}
+		return sorted;
+	}
+	
+	static boolean stringSorted(List<String> words) {
+		boolean alphabetical = true; 
+		for(int i = 0;i<words.size()-1;i++) {
+			if(words.get(i).compareTo(words.get(i+1)) <= 0) { 
+				continue; 
+			}
+			else {
+				alphabetical = false;
+				break;
+			}
+		}
+		return alphabetical;
+	}
+
 	
 	public static int findBrokenEgg(List<String> eggs) {
 		for(int i = 0;i<eggs.size();i++) {
@@ -88,5 +116,32 @@ public class Algorithms {
 			}
 		}
 		return results;
+	}
+
+	public static Object sortDNA(List<String> unsortedSequences) {
+		// TODO Auto-generated method stub
+		while(stringArraySorted(unsortedSequences) == false) {
+			for(int i = 0;i<unsortedSequences.size()-1;i++) {
+				if(unsortedSequences.get(i).length() > unsortedSequences.get(i+1).length()) {
+					String x = unsortedSequences.get(i);
+					unsortedSequences.set(i, unsortedSequences.get(i+1));
+					unsortedSequences.set(i+1, x);
+				}
+			}
+		}
+		return unsortedSequences;
+	}
+	public static List<String> sortWords(List<String> words) {
+		// TODO Auto-generated method stub
+		while(stringSorted(words) == false) {
+			for(int i = 0;i<words.size()-1;i++) {
+				if(words.get(i).compareTo(words.get(i+1)) >= 0) {
+					String x = words.get(i);
+					words.set(i, words.get(i+1));
+					words.set(i+1, x);
+				}
+			}
+		}
+		return words;
 	}
 }

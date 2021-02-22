@@ -69,7 +69,7 @@ public class _00_SortedArrayChecker {
 	static boolean stringArraySorted(String[] words) {
 		boolean alphabetical = true; 
 		for(int i = 0;i<words.length-1;i++) {
-			if(words[i].charAt(0) < words[i+1].charAt(0)) { 
+			if(words[i].compareTo(words[i+1]) <= 0) { 
 				continue; 
 			}
 			else {
